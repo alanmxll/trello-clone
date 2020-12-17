@@ -1,7 +1,7 @@
 function App() {
   return (
     <div className="App">
-      <p>Jira Clone</p>
+      <p>Trello Clone</p>
     </div>
   );
 }
