@@ -7,4 +7,6 @@ export const WrapperTrelloList = styled.div`
   padding: 8px;
 `;
 
-export const TrelloListTitle = styled.h4``;
+export const TrelloListTitle = styled.h4`
+  color: #172b4d;
+`;
