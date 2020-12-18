@@ -1,12 +1,11 @@
+import TrelloTitle from "./components/TrelloTitle";
 import TrelloList from "./components/TrelloList";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <p>Trello Clone</p>
+      <TrelloTitle title={"Trello Clone"} />
       <TrelloList title={"Column name"} />
     </div>
   );
 }
-
-export default App;
