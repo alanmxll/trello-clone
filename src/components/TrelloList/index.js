@@ -9,7 +9,7 @@ export default function TrelloList({ title, cards }) {
     <WrapperTrelloList>
       <TrelloListTitle>{title}</TrelloListTitle>
       {cards.map((card) => {
-        return <TrelloCard text={card.text} />;
+        return <TrelloCard key={card.id} text={card.text} />;
       })}
     </WrapperTrelloList>
   );

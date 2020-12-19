@@ -13,7 +13,9 @@ export default function App() {
       <TrelloTitle title={"Trello Clone"} />
       <WrapperLists>
         {lists.map((list) => {
-          return <TrelloList title={list.title} cards={list.cards} />;
+          return (
+            <TrelloList key={list.id} title={list.title} cards={list.cards} />
+          );
         })}
       </WrapperLists>
     </>
