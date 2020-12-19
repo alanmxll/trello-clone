@@ -2,11 +2,11 @@ import React from "react";
 
 import { Card, CardContent } from "./style";
 
-export default function TrelloCard() {
+export default function TrelloCard({ text }) {
   return (
     <>
       <Card>
-        <CardContent>This is the content of the Card component.</CardContent>
+        <CardContent>{text}</CardContent>
       </Card>
     </>
   );
