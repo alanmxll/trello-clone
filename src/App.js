@@ -1,5 +1,6 @@
 import TrelloTitle from "./components/TrelloTitle";
 import TrelloList from "./components/TrelloList";
+import TrelloActionButton from "./components/TrelloActionButton";
 
 import { useSelector } from "react-redux";
 
@@ -17,6 +18,7 @@ export default function App() {
             <TrelloList key={list.id} title={list.title} cards={list.cards} />
           );
         })}
+        <TrelloActionButton list />
       </WrapperLists>
     </>
   );

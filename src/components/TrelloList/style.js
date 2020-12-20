@@ -4,8 +4,12 @@ export const WrapperTrelloList = styled.div`
   background-color: #ebecf0;
   border-radius: 3px;
   width: 250px;
+  height: max-content;
   padding: 8px;
   margin-left: 10px;
+  &:first-child {
+    margin-left: 0px;
+  }
 `;
 
 export const TrelloListTitle = styled.h4`
