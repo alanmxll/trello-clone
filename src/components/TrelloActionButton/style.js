@@ -31,9 +31,9 @@ export const WrapperCreateFromTemplateIconButton = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  height: max-content;
   margin-left: 4px;
   padding: 10px;
+  width: 12px;
   height: 10px;
   &:hover {
     background-color: rgba(158, 158, 158, 0.5);
