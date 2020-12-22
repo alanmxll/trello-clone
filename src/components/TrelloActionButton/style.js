@@ -42,6 +42,26 @@ export const WrapperCreateFromTemplateIconButton = styled.div`
 
 export const ActionButtonText = styled.p``;
 
+export const WrapperTextArea = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AddCardOrColumnTextArea = styled.textarea`
+  width: 240px;
+  height: 50px;
+`;
+
+export const AddCardOrColumnButton = styled.button`
+  width: 100px;
+  height: 40px;
+  margin-top: 5px;
+  background-color: #5aac44;
+  color: white;
+  border: 1px solid;
+  border-radius: 5px;
+`;
+
 /**
  * buttonTextOpacity = list ? 1 : 0.5;
  * buttonTextColor = list ? "white" : "inherit";
