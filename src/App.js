@@ -1,16 +1,16 @@
 import TrelloTitle from "./components/TrelloTitle";
 import TrelloList from "./components/TrelloList";
-import TrelloActionButton from "./components/TrelloActionButton";
+import TrelloAddListButton from "./components/TrelloAddListButton";
 
 import { useSelector } from "react-redux";
 
-import { WrapperLists } from "./styles/global";
+import { WrapperGlobal, WrapperLists } from "./styles/global";
 
 export default function App() {
   let lists = useSelector((state) => state.listsReducer);
 
   return (
-    <>
+    <WrapperGlobal>
       <TrelloTitle title={"Trello Clone"} />
       <WrapperLists>
         {lists.map((list) => {
@@ -18,8 +18,8 @@ export default function App() {
             <TrelloList key={list.id} title={list.title} cards={list.cards} />
           );
         })}
-        <TrelloActionButton list />
+        <TrelloAddListButton />
       </WrapperLists>
-    </>
+    </WrapperGlobal>
   );
 }

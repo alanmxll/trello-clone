@@ -27,7 +27,7 @@ const initialState = [
       },
       {
         id: 2,
-        text: "Play World Of Wacracft",
+        text: "Play World Of Warcraft",
       },
     ],
   },
