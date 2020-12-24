@@ -5,7 +5,6 @@ export const WrapperAddListButton = styled.div`
   align-items: center;
   border-radius: 4px;
   display: flex;
-  height: 30px;
   flex-direction: row;
   margin-left: 10px;
   padding-left: 10px;
