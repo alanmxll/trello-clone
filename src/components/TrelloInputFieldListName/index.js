@@ -22,7 +22,7 @@ export default function TrelloInputFieldListName() {
       <TextAreaInputListName placeholder={"Enter list title..."} />
       <WrapperActionButtons>
         <AddListOnBoardButton>Add List</AddListOnBoardButton>
-        <GrClose onClick={onClickClose} />
+        <GrClose onClick={onClickClose} style={{ cursor: "pointer" }} />
       </WrapperActionButtons>
     </WrapperInputField>
   );

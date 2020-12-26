@@ -24,6 +24,7 @@ export const AddListOnBoardButton = styled.button`
   border-radius: 4px;
   background-color: #5aac44;
   color: #fff;
+  cursor: pointer;
   width: 80px;
   min-height: 32px;
   height: 32px;
