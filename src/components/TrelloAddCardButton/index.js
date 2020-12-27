@@ -20,8 +20,8 @@ export default function TrelloAddCardButton() {
   }
 
   return (
-    <WrapperAddCardButton onClick={onHandleClick}>
-      <WrapperAddButton>
+    <WrapperAddCardButton>
+      <WrapperAddButton onClick={onHandleClick}>
         <FiPlus />
         <ActionButtonText>Add another card</ActionButtonText>
       </WrapperAddButton>
