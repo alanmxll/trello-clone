@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperInputField = styled.div`
-  background-color: #fff;
-`;
+export const WrapperInputField = styled.div``;
 
 export const TextAreaInputCardName = styled.textarea`
   resize: none;
@@ -15,6 +13,7 @@ export const WrapperActionButtons = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 10px;
 `;
 
 export const AddCardOnBoardButton = styled.button`
@@ -26,6 +25,6 @@ export const AddCardOnBoardButton = styled.button`
   width: 80px;
   min-height: 32px;
   height: 32px;
-  margin: 5px;
+  margin-left: 0px;
   margin-right: 10px;
 `;
