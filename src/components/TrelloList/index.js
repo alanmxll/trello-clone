@@ -16,7 +16,7 @@ export default function TrelloList() {
     <WrapperLists>
       {lists.map((list) => {
         return (
-          <WrapperTrelloList>
+          <WrapperTrelloList key={list.id}>
             <TrelloListTitle>{list.title}</TrelloListTitle>
             {list.cards.map((card) => {
               return <TrelloCard key={card.id} text={card.text} />;
