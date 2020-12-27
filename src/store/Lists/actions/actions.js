@@ -12,7 +12,7 @@ export function clickOnAddColumnButton() {
   };
 }
 
-export function clickOnCloseInputFieldIcon() {
+export function clickOnCloseInputFieldIconColumn() {
   const currentState = store.getState();
   let { addColumnButtonWasClicked } = currentState.listsReducer;
 
@@ -21,5 +21,29 @@ export function clickOnCloseInputFieldIcon() {
   return {
     type: "ON_CLICK_ADD_COLUMN_BUTTON",
     payload: addColumnButtonWasClicked,
+  };
+}
+
+export function clickOnAddCardButton() {
+  const currentState = store.getState();
+  let { addCardButtonWasClicked } = currentState.listsReducer;
+
+  addCardButtonWasClicked = true;
+
+  return {
+    type: "ON_CLICK_ADD_CARD_BUTTON",
+    payload: addCardButtonWasClicked,
+  };
+}
+
+export function clickOnCloseInputFieldIconCard() {
+  const currentState = store.getState();
+  let { addCardButtonWasClicked } = currentState.listsReducer;
+
+  addCardButtonWasClicked = false;
+
+  return {
+    type: "ON_CLICK_ADD_CARD_BUTTON",
+    payload: addCardButtonWasClicked,
   };
 }

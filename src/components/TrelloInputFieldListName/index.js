@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { clickOnCloseInputFieldIcon } from "../../store/Lists/actions/actions";
+import { clickOnCloseInputFieldIconColumn } from "../../store/Lists/actions/actions";
 
 import { GrClose } from "react-icons/gr";
 import {
@@ -12,10 +12,10 @@ import {
 } from "./style";
 
 export default function TrelloInputFieldListName() {
-  const dispatchClickOnCloseInputFieldIcon = useDispatch();
+  const dispatchClickOnCloseInputFieldIconColumn = useDispatch();
 
   function onClickClose() {
-    dispatchClickOnCloseInputFieldIcon(clickOnCloseInputFieldIcon());
+    dispatchClickOnCloseInputFieldIconColumn(clickOnCloseInputFieldIconColumn());
   }
   return (
     <WrapperInputField>
