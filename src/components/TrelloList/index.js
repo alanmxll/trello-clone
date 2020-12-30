@@ -5,8 +5,7 @@ import { WrapperTrelloList, TrelloListTitle } from "./style";
 import { WrapperLists } from "../../styles/global";
 
 import TrelloCard from "../TrelloCard";
-import TrelloAddCardButton from "../TrelloAddCardButton";
-import TrelloInputFieldCardName from "../TrelloInputFieldCardName";
+import TrelloAddCardComponent from "../TrelloAddCardComponent";
 
 export default function TrelloList() {
   let { lists } = useSelector((state) => ({
@@ -22,11 +21,7 @@ export default function TrelloList() {
             {list.cards.map((card) => {
               return <TrelloCard key={card.id} text={card.text} />;
             })}
-            {list.addCardButtonWasClicked ? (
-              <TrelloInputFieldCardName index={index} />
-            ) : (
-              <TrelloAddCardButton index={index} />
-            )}
+            <TrelloAddCardComponent />
           </WrapperTrelloList>
         );
       })}

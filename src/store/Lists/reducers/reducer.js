@@ -4,7 +4,6 @@ const initialState = {
     {
       title: "Study",
       id: 0,
-      addCardButtonWasClicked: false,
       cards: [
         {
           id: 0,
@@ -19,7 +18,6 @@ const initialState = {
     {
       title: "Recreation",
       id: 1,
-      addCardButtonWasClicked: false,
       cards: [
         {
           id: 0,
