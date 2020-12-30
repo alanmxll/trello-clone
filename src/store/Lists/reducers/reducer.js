@@ -1,5 +1,4 @@
 const initialState = {
-  addColumnButtonWasClicked: false,
   lists: [
     {
       title: "Study",
@@ -38,16 +37,6 @@ const initialState = {
 
 const listsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ON_CLICK_ADD_COLUMN_BUTTON":
-      return {
-        ...state,
-        addColumnButtonWasClicked: action.payload,
-      };
-    case "ON_CLICK_ADD_CARD_BUTTON":
-      return {
-        ...state,
-        lists: action.payload,
-      };
     default:
       return state;
   }
