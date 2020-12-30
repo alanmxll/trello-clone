@@ -12,7 +12,7 @@ import {
   ActionButtonText,
 } from "./style";
 
-export default function TrelloAddCardButton() {
+export default function TrelloAddCardButton({ index }) {
   const dispatchClickOnAddCardButton = useDispatch();
 
   function onHandleClick() {
