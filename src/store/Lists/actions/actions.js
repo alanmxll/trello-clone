@@ -24,26 +24,34 @@ export function clickOnCloseInputFieldIconColumn() {
   };
 }
 
-export function clickOnAddCardButton() {
+export function clickOnAddCardButton({ index }) {
   const currentState = store.getState();
-  let { addCardButtonWasClicked } = currentState.listsReducer;
+  let { lists } = currentState.listsReducer;
 
-  addCardButtonWasClicked = true;
+  lists.map((el, i) => {
+    if (i === index) {
+      el.addCardButtonWasClicked = true;
+    }
+  });
 
   return {
     type: "ON_CLICK_ADD_CARD_BUTTON",
-    payload: addCardButtonWasClicked,
+    payload: lists,
   };
 }
 
-export function clickOnCloseInputFieldIconCard() {
+export function clickOnCloseInputFieldIconCard({ index }) {
   const currentState = store.getState();
-  let { addCardButtonWasClicked } = currentState.listsReducer;
+  let { lists } = currentState.listsReducer;
 
-  addCardButtonWasClicked = false;
+  lists.map((el, i) => {
+    if (i === index) {
+      el.addCardButtonWasClicked = false;
+    }
+  });
 
   return {
     type: "ON_CLICK_ADD_CARD_BUTTON",
-    payload: addCardButtonWasClicked,
+    payload: lists,
   };
 }

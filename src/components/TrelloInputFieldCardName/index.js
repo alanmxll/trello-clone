@@ -11,11 +11,13 @@ import {
   AddCardOnBoardButton,
 } from "./style";
 
-export default function TrelloInputFieldCardName() {
+export default function TrelloInputFieldCardName({ index }) {
   const dispatchClickOnCloseInputFieldIconCard = useDispatch();
 
   function onClickClose() {
-    dispatchClickOnCloseInputFieldIconCard(clickOnCloseInputFieldIconCard());
+    dispatchClickOnCloseInputFieldIconCard(
+      clickOnCloseInputFieldIconCard({ index })
+    );
   }
 
   return (

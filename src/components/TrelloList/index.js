@@ -9,7 +9,7 @@ import TrelloAddCardButton from "../TrelloAddCardButton";
 import TrelloInputFieldCardName from "../TrelloInputFieldCardName";
 
 export default function TrelloList() {
-  let { lists, addCardButtonWasClicked } = useSelector((state) => ({
+  let { lists } = useSelector((state) => ({
     ...state.listsReducer,
   }));
 
@@ -22,8 +22,8 @@ export default function TrelloList() {
             {list.cards.map((card) => {
               return <TrelloCard key={card.id} text={card.text} />;
             })}
-            {addCardButtonWasClicked ? (
-              <TrelloInputFieldCardName />
+            {list.addCardButtonWasClicked ? (
+              <TrelloInputFieldCardName index={index} />
             ) : (
               <TrelloAddCardButton index={index} />
             )}

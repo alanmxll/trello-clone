@@ -16,7 +16,7 @@ export default function TrelloAddCardButton({ index }) {
   const dispatchClickOnAddCardButton = useDispatch();
 
   function onHandleClick() {
-    dispatchClickOnAddCardButton(clickOnAddCardButton());
+    dispatchClickOnAddCardButton(clickOnAddCardButton({ index }));
   }
 
   return (
