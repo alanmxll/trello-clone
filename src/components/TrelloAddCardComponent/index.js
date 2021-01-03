@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { FiPlus } from "react-icons/fi";
-import { GrTemplate, GrClose } from "react-icons/gr";
+import { GrTemplate, GrClose, GrMore } from "react-icons/gr";
 
 import {
   WrapperAddCardButton,
@@ -12,6 +12,7 @@ import {
   TextAreaInputCardName,
   WrapperActionButtons,
   AddCardOnBoardButton,
+  WrapperOptionsButton,
 } from "./style";
 
 export default function TrelloAddCardComponent() {
@@ -24,6 +25,11 @@ export default function TrelloAddCardComponent() {
   function onHandleClickCloseTextInput() {
     setAddCardIsOpen(false);
   }
+
+  function onHandleClickOptionsButton() {
+    console.log("Options button clicked");
+  }
+
   return addCardIsOpen ? (
     <WrapperInputField>
       <TextAreaInputCardName placeholder={"Enter a title for this card..."} />
@@ -33,6 +39,12 @@ export default function TrelloAddCardComponent() {
           onClick={onHandleClickCloseTextInput}
           style={{ cursor: "pointer" }}
         />
+        <WrapperOptionsButton>
+          <GrMore
+            onClick={onHandleClickOptionsButton}
+            style={{ cursor: "pointer" }}
+          />
+        </WrapperOptionsButton>
       </WrapperActionButtons>
     </WrapperInputField>
   ) : (

@@ -67,3 +67,7 @@ export const AddCardOnBoardButton = styled.button`
   margin-left: 0px;
   margin-right: 10px;
 `;
+
+export const WrapperOptionsButton = styled.div`
+  margin-inline-start: auto;
+`;
