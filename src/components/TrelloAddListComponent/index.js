@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addList } from "../../store/Lists/actions/actions";
 
 import { FiPlus } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
@@ -12,9 +14,11 @@ import {
 } from "./style";
 
 export default function TrelloAddListComponent() {
+  const dispatchAddList = useDispatch();
   const [addListIsOpen, setAddListIsOpen] = useState(false);
+  const [textTyped, setTextTyped] = useState("");
 
-  function onHandleClickAddList() {
+  function onHandleClickAddAnotherList() {
     setAddListIsOpen(true);
   }
 
@@ -22,11 +26,24 @@ export default function TrelloAddListComponent() {
     setAddListIsOpen(false);
   }
 
+  function onHandleClickAddList() {
+    dispatchAddList(addList({ title: textTyped }));
+    setTextTyped("");
+    setAddListIsOpen(false);
+  }
+
   return addListIsOpen ? (
     <WrapperInputField>
-      <TextAreaInputListName placeholder={"Enter list title..."} />
+      <TextAreaInputListName
+        placeholder={"Enter list title..."}
+        onChange={(event) => {
+          setTextTyped(event.target.value);
+        }}
+      />
       <WrapperActionButtons>
-        <AddListOnBoardButton>Add List</AddListOnBoardButton>
+        <AddListOnBoardButton onClick={onHandleClickAddList}>
+          Add List
+        </AddListOnBoardButton>
         <GrClose
           onClick={onHandleClickCloseTextInput}
           style={{ cursor: "pointer" }}
@@ -34,7 +51,7 @@ export default function TrelloAddListComponent() {
       </WrapperActionButtons>
     </WrapperInputField>
   ) : (
-    <WrapperAddListButton onClick={onHandleClickAddList}>
+    <WrapperAddListButton onClick={onHandleClickAddAnotherList}>
       <FiPlus />
       <ActionButtonText>Add another list</ActionButtonText>
     </WrapperAddListButton>
