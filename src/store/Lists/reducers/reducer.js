@@ -1,7 +1,5 @@
-import mockList from "../../../mocks/mockLists";
-
 const initialState = {
-  lists: mockList,
+  lists: [],
 };
 
 const listsReducer = (state = initialState, action) => {
