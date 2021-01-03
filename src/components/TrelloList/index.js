@@ -21,7 +21,7 @@ export default function TrelloList() {
             {list.cards.map((card) => {
               return <TrelloCard key={card.id} text={card.text} />;
             })}
-            <TrelloAddCardComponent />
+            <TrelloAddCardComponent index={index} />
           </WrapperTrelloList>
         );
       })}

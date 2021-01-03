@@ -1,6 +1,23 @@
 import { store } from "../../store";
 
-export function addCard() {}
+export function addCard({ title, index }) {
+  const currentState = store.getState();
+  let { lists } = currentState.listsReducer;
+
+  const cardToAdd = {
+    id: lists[index].cards.length,
+    text: title,
+  };
+
+  if (title !== "") {
+    lists[index].cards.push(cardToAdd);
+  }
+
+  return {
+    type: "ADD_CARD",
+    payload: lists,
+  };
+}
 
 export function addList({ title }) {
   const currentState = store.getState();

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addCard } from "../../store/Lists/actions/actions";
 
 import { FiPlus } from "react-icons/fi";
 import { GrTemplate, GrClose, GrMore } from "react-icons/gr";
@@ -15,10 +17,12 @@ import {
   WrapperOptionsButton,
 } from "./style";
 
-export default function TrelloAddCardComponent() {
+export default function TrelloAddCardComponent({ index }) {
+  const dispatchAddCard = useDispatch();
   const [addCardIsOpen, setAddCardIsOpen] = useState(false);
+  const [textTyped, setTextTyped] = useState("");
 
-  function onHandleClickAddCard() {
+  function onHandleClickAddAnotherCard() {
     setAddCardIsOpen(true);
   }
 
@@ -30,11 +34,26 @@ export default function TrelloAddCardComponent() {
     console.log("Options button clicked");
   }
 
+  function onHandleClickAddCard() {
+    dispatchAddCard(addCard({ title: textTyped, index: index }));
+    setTextTyped("");
+    setAddCardIsOpen(false);
+  }
+
   return addCardIsOpen ? (
     <WrapperInputField>
-      <TextAreaInputCardName placeholder={"Enter a title for this card..."} />
+      <TextAreaInputCardName
+        placeholder={"Enter a title for this card..."}
+        onChange={(event) => setTextTyped(event.target.value)}
+      />
       <WrapperActionButtons>
-        <AddCardOnBoardButton>Add Card</AddCardOnBoardButton>
+        <AddCardOnBoardButton
+          onClick={() => {
+            onHandleClickAddCard();
+          }}
+        >
+          Add Card
+        </AddCardOnBoardButton>
         <GrClose
           onClick={onHandleClickCloseTextInput}
           style={{ cursor: "pointer" }}
@@ -49,7 +68,7 @@ export default function TrelloAddCardComponent() {
     </WrapperInputField>
   ) : (
     <WrapperAddCardButton>
-      <WrapperAddButton onClick={onHandleClickAddCard}>
+      <WrapperAddButton onClick={onHandleClickAddAnotherCard}>
         <FiPlus />
         <ActionButtonText>Add another card</ActionButtonText>
       </WrapperAddButton>

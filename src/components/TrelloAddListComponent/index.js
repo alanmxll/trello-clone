@@ -36,9 +36,7 @@ export default function TrelloAddListComponent() {
     <WrapperInputField>
       <TextAreaInputListName
         placeholder={"Enter list title..."}
-        onChange={(event) => {
-          setTextTyped(event.target.value);
-        }}
+        onChange={(event) => setTextTyped(event.target.value)}
       />
       <WrapperActionButtons>
         <AddListOnBoardButton onClick={onHandleClickAddList}>
