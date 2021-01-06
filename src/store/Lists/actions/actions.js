@@ -38,3 +38,27 @@ export function addList({ title }) {
     payload: lists,
   };
 }
+
+export function dragCard({ result }) {
+  const currentState = store.getState();
+  let { lists } = currentState.listsReducer;
+
+  if (!result.destination) return;
+
+  const [reorderedList] = lists[result.source.droppableId].cards.splice(
+    result.source.index,
+    1
+  );
+  lists[result.source.droppableId].cards.splice(
+    result.destination.index,
+    0,
+    reorderedList
+  );
+
+  console.log(result);
+
+  return {
+    type: "DRAG_CARD",
+    payload: lists,
+  };
+}

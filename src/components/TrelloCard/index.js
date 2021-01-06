@@ -5,7 +5,7 @@ import { Draggable } from "react-beautiful-dnd";
 
 export default function TrelloCard({ text, index }) {
   return (
-    <Draggable draggableId={`draggable-${index}`} index={index}>
+    <Draggable draggableId={`${index}`} index={index}>
       {(provided) => (
         <Card
           ref={provided.innerRef}

@@ -17,20 +17,33 @@ export default function TrelloList() {
     <WrapperLists>
       {lists.map((list, index) => {
         return (
-          <Droppable droppableId={`droppable-${list.id}`} key={list.id}>
+          <Droppable
+            droppableId={`${list.id}`}
+            key={`list-${list.id}`}
+          >
             {(provided) => [
               <WrapperTrelloList
+                key={`wrapperlist-${list.id}`}
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
-                <TrelloListTitle>{list.title}</TrelloListTitle>
+                <TrelloListTitle key={`list-${list.id}`}>
+                  {list.title}
+                </TrelloListTitle>
                 {list.cards.map((card, index) => {
                   return (
-                    <TrelloCard key={card.id} text={card.text} index={index} />
+                    <TrelloCard
+                      key={`list-${list.id}-card-${card.id}`}
+                      text={card.text}
+                      index={index}
+                    />
                   );
                 })}
                 {provided.placeholder}
-                <TrelloAddCardComponent index={index} />
+                <TrelloAddCardComponent
+                  key={`addlist-${list.id}`}
+                  index={index}
+                />
               </WrapperTrelloList>,
             ]}
           </Droppable>

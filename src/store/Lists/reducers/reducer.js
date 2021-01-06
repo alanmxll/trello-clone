@@ -14,6 +14,11 @@ const listsReducer = (state = initialState, action) => {
         ...state,
         lists: action.payload,
       };
+    case "DRAG_CARD":
+      return {
+        ...state,
+        lists: action.payload,
+      };
     default:
       return state;
   }
