@@ -6,7 +6,7 @@ import TrelloTitle from "./components/TrelloTitle";
 import TrelloList from "./components/TrelloList";
 import TrelloAddListComponent from "./components/TrelloAddListComponent";
 
-import { WrapperGlobal, WrapperLists } from "./styles/global";
+import { WrapperGlobal, WrapperLists, GlobalStyle } from "./styles/global";
 import { DragDropContext } from "react-beautiful-dnd";
 
 export default function App() {
@@ -25,6 +25,8 @@ export default function App() {
           <TrelloAddListComponent />
         </WrapperLists>
       </WrapperGlobal>
+
+      <GlobalStyle />
     </DragDropContext>
   );
 }
