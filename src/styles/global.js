@@ -1,18 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-export const WrapperGlobal = styled.div`
-  background-color: #b48484;
-  padding: 10px;
-  height: 100vh;
-  width: 100vw;
-`;
-
-export const WrapperLists = styled.div`
-  display: flex;
-  justify-content: flex-start;
-`;
-
-export const GlobalStyle = createGlobalStyle`
+export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
 
   * {
@@ -28,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font: 14px 'Roboto', sans-serif;
-    background: #ecf1f8;
+    background: #d18502;
     color: #333;
     -webkit-font-smoothing: antialiased !important;
   }

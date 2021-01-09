@@ -1,32 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { dragCard } from "./store/Lists/actions/actions";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-import TrelloTitle from "./components/TrelloTitle";
-import TrelloList from "./components/TrelloList";
-import TrelloAddListComponent from "./components/TrelloAddListComponent";
+import GlobalStyle from "./styles/global";
 
-import { WrapperGlobal, WrapperLists, GlobalStyle } from "./styles/global";
-import { DragDropContext } from "react-beautiful-dnd";
+import Header from "./components/Header";
+import Board from "./components/Board";
 
-export default function App() {
-  const dispatchDragCard = useDispatch();
-
-  function onDragEnd(result) {
-    dispatchDragCard(dragCard({ result }));
-  }
-
+function App() {
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <WrapperGlobal>
-        <TrelloTitle title={"Trello Clone"} />
-        <WrapperLists>
-          <TrelloList />
-          <TrelloAddListComponent />
-        </WrapperLists>
-      </WrapperGlobal>
+    <DndProvider backend={HTML5Backend}>
+      <Header />
+      <Board />
 
       <GlobalStyle />
-    </DragDropContext>
+    </DndProvider>
   );
 }
+
+export default App;
