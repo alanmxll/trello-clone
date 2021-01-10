@@ -1,6 +1,7 @@
 import React from "react";
 
 import { MdAdd } from "react-icons/md";
+import { GrTemplate } from "react-icons/gr";
 
 import Card from "../Card";
 
@@ -19,10 +20,18 @@ function List({ data, index: listIndex }) {
         ))}
       </ul>
 
-      <button>
-        <MdAdd size={20} />
-        <p>Add another card</p>
-      </button>
+      <div className="action-buttons">
+        <button className="add-card-button">
+          <MdAdd size={20} />
+          <p>Add another card</p>
+        </button>
+        <button
+          className="create-from-template"
+          title="Create from template..."
+        >
+          <GrTemplate />
+        </button>
+      </div>
     </Container>
   );
 }
