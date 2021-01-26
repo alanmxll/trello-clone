@@ -6,6 +6,7 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 
   h1 {
