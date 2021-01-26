@@ -17,7 +17,6 @@ export const Container = styled.div`
   }
 
   p {
-    font-weight: 550;
     line-height: 20px;
   }
 
