@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { MdAdd } from "react-icons/md";
+import { MdAdd, MdClose } from "react-icons/md";
 import { GrTemplate } from "react-icons/gr";
 
 import Card from "../Card";
@@ -8,6 +8,17 @@ import Card from "../Card";
 import { Container } from "./styles";
 
 function List({ data, index: listIndex }) {
+  const [addCardWasClicked, setAddCardWasClicked] = useState(false);
+  const [textAreaValue, setTextAreaValue] = useState("");
+
+  function onHandleClickAddCard() {
+    setAddCardWasClicked(!addCardWasClicked);
+  }
+
+  function onHandleTextAreaValue({ event }) {
+    setTextAreaValue(event.target.value);
+  }
+
   return (
     <Container>
       <header>
@@ -20,18 +31,44 @@ function List({ data, index: listIndex }) {
         ))}
       </ul>
 
-      <div className="action-buttons">
-        <button className="add-card-button">
-          <MdAdd size={20} />
-          <p>Add another card</p>
-        </button>
-        <button
-          className="create-from-template"
-          title="Create from template..."
-        >
-          <GrTemplate />
-        </button>
-      </div>
+      {!addCardWasClicked && (
+        <div className="action-buttons">
+          <button className="add-card-button" onClick={onHandleClickAddCard}>
+            <MdAdd size={20} />
+            <p>Add another card</p>
+          </button>
+          <button
+            className="create-from-template"
+            title="Create from template..."
+          >
+            <GrTemplate />
+          </button>
+        </div>
+      )}
+
+      {addCardWasClicked && (
+        <div className="div-textarea">
+          <textarea
+            placeholder={"Enter a title for this card..."}
+            onChange={(event) => onHandleTextAreaValue({ event })}
+          />
+          <div className="add-or-cancel">
+            <button
+              className="add-card"
+              onClick={() => {
+                // TODO: function to Add Card
+                console.log(textAreaValue);
+                onHandleClickAddCard();
+              }}
+            >
+              Add Card
+            </button>
+            <button className="cancel" onClick={onHandleClickAddCard}>
+              <MdClose size={24} color={"888"} />
+            </button>
+          </div>
+        </div>
+      )}
     </Container>
   );
 }

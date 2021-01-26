@@ -53,10 +53,54 @@ export const Container = styled.div`
       width: 270px;
       font-size: 14px;
       padding-left: 10px;
+      cursor: pointer;
     }
 
     button.create-from-template {
       width: 30px;
+      cursor: pointer;
+    }
+  }
+
+  div.div-textarea {
+    textarea {
+      width: 300px;
+      max-width: 300px;
+      height: 50px;
+      min-height: 50px;
+      max-height: 80px;
+      padding: 5px;
+      border-radius: 4px;
+      border-top: 1px solid rgba(100, 100, 100, 0.2);
+      border-right: 1px solid rgba(100, 100, 100, 0.2);
+      border-left: 1px solid rgba(100, 100, 100, 0.2);
+      border-bottom: 1px solid rgba(80, 80, 80, 0.5);
+    }
+
+    div.add-or-cancel {
+      display: flex;
+      margin-top: 5px;
+
+      button.add-card {
+        width: 5rem;
+        height: 2rem;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: #5aac44;
+        color: #fff;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button.cancel {
+        width: 2rem;
+        height: 2rem;
+        border: none;
+        background-color: #ebecf0;
+        cursor: pointer;
+      }
     }
   }
 
