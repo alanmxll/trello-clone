@@ -24,6 +24,9 @@ function List({ data, index: listIndex }) {
     <Container>
       <header>
         <h2>{data.title}</h2>
+        <div className="header-options">
+          <BsThreeDots size={18} color={"727e91"} />
+        </div>
       </header>
 
       <ul>

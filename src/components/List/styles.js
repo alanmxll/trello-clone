@@ -24,6 +24,19 @@ export const Container = styled.div`
       font-size: 14px;
       padding: 0 10px;
     }
+    div.header-options {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      :hover {
+        background-color: rgba(80, 80, 80, 0.1);
+        border-radius: 4px;
+      }
+    }
   }
 
   div.action-buttons {
