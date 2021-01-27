@@ -62,7 +62,7 @@ export const Container = styled.div`
     }
   }
 
-  div.div-textarea {
+  div.textarea {
     textarea {
       width: 300px;
       max-width: 300px;
@@ -77,29 +77,50 @@ export const Container = styled.div`
       border-bottom: 1px solid rgba(80, 80, 80, 0.5);
     }
 
-    div.add-or-cancel {
+    div.actions {
       display: flex;
+      justify-content: space-between;
       margin-top: 5px;
 
-      button.add-card {
-        width: 5rem;
-        height: 2rem;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        background-color: #5aac44;
-        color: #fff;
-        font-size: 14px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+      div.actions-divider {
+        display: flex;
+
+        button.add-card {
+          width: 5rem;
+          height: 2rem;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          background-color: #5aac44;
+          color: #fff;
+          font-size: 14px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        button.cancel {
+          width: 2rem;
+          height: 2rem;
+          border: none;
+          background-color: #ebecf0;
+          cursor: pointer;
+        }
       }
 
-      button.cancel {
+      div.options {
         width: 2rem;
         height: 2rem;
-        border: none;
-        background-color: #ebecf0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-right: 5px;
         cursor: pointer;
+
+        :hover {
+          background-color: rgba(80, 80, 80, 0.1);
+          border-radius: 4px;
+        }
       }
     }
   }

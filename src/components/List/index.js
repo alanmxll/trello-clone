@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { MdAdd, MdClose } from "react-icons/md";
 import { GrTemplate } from "react-icons/gr";
+import { BsThreeDots } from "react-icons/bs";
 
 import Card from "../Card";
 
@@ -47,25 +48,30 @@ function List({ data, index: listIndex }) {
       )}
 
       {addCardWasClicked && (
-        <div className="div-textarea">
+        <div className="textarea">
           <textarea
             placeholder={"Enter a title for this card..."}
             onChange={(event) => onHandleTextAreaValue({ event })}
           />
-          <div className="add-or-cancel">
-            <button
-              className="add-card"
-              onClick={() => {
-                // TODO: function to Add Card
-                console.log(textAreaValue);
-                onHandleClickAddCard();
-              }}
-            >
-              Add Card
-            </button>
-            <button className="cancel" onClick={onHandleClickAddCard}>
-              <MdClose size={24} color={"888"} />
-            </button>
+          <div className="actions">
+            <div className="actions-divider">
+              <button
+                className="add-card"
+                onClick={() => {
+                  // TODO: function to Add Card
+                  console.log(textAreaValue);
+                  onHandleClickAddCard();
+                }}
+              >
+                Add Card
+              </button>
+              <button className="cancel" onClick={onHandleClickAddCard}>
+                <MdClose size={24} color={"727e91"} />
+              </button>
+            </div>
+            <div className="options">
+              <BsThreeDots size={20} color={"727e91"} />
+            </div>
           </div>
         </div>
       )}
