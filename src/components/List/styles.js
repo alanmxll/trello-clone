@@ -65,6 +65,7 @@ export const Container = styled.div`
   div.textarea {
     textarea {
       width: 300px;
+      min-width: 300px;
       max-width: 300px;
       height: 50px;
       min-height: 50px;
