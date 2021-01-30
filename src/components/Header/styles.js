@@ -10,6 +10,7 @@ export const Container = styled.div`
   margin-bottom: 20px;
 
   img {
+    margin-right: 10rem;
     cursor: pointer;
     opacity: 0.7;
 
@@ -69,6 +70,22 @@ export const Container = styled.div`
         resize: none;
         cursor: text;
       }
+    }
+
+    div.image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      color: #fff;
+      border-radius: 100%;
+      height: 2rem;
+      width: 2rem;
+      margin: 0 5px;
+      background-color: #fff;
+      color: rgb(0, 0, 75);
+      font-weight: bold;
+      cursor: pointer;
     }
   }
 `;
