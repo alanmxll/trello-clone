@@ -18,13 +18,14 @@ export const Container = styled.div`
 
   div.menu-buttons {
     display: flex;
-    margin-left: 5px;
+    justify-content: space-around;
 
-    div.main-menu {
+    div.button {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 5px;
+      padding: 8px;
+      margin-left: 5px;
       border-radius: 5px;
       background-color: rgba(0, 0, 0, 0.25);
       cursor: pointer;
@@ -35,6 +36,13 @@ export const Container = styled.div`
 
       :active {
         background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        color: #fff;
+        margin-left: 5px;
+        font-size: 14px;
+        font-weight: bold;
       }
     }
   }
