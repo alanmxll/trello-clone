@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     height: "30px",
     fontSize: "14px",
     letterSpacing: "0.2px",
+    cursor: "pointer",
   },
 }));
 

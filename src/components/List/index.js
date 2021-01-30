@@ -89,6 +89,7 @@ function List({ data, index: listIndex }) {
                   size={20}
                   color={"727e91"}
                   cursor={"pointer"}
+                  onClick={handleClose}
                 />
               </div>
               <hr />
