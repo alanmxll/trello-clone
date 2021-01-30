@@ -9,11 +9,13 @@ export const Container = styled.div`
   align-items: center;
   margin-bottom: 20px;
 
-  h1 {
-    align-self: center;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
+  img {
+    cursor: pointer;
+    opacity: 0.7;
+
+    :hover {
+      opacity: 1;
+    }
   }
 
   div.menu-buttons {
